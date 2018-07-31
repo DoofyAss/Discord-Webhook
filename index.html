@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Webhook</title>
+	<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+	<layout view='get'>
+
+
+
+		<view id='get'>
+			<input placeholder='Webhook URL'
+				onpaste='setTimeout(() => blur())'
+				pattern='^https://discordapp.com/api/webhooks(.*)$'
+			required>
+
+			<button onclick='get(this)'>Lets Go!</button>
+			<loader></loader>
+		</view>
+
+
+
+		<view id='post'>
+			<div class='avatar'></div>
+			<div>
+				<div class='name'>Name</div>
+				<input placeholder='Message'
+					onkeyup='if(event.keyCode == 13) post(this)'
+				required>
+			</div>
+		</view>
+
+
+
+	</layout>
+
+	<script src='axios.js'></script>
+	<script src='script.js'></script>
+
+</body>
+</html>
